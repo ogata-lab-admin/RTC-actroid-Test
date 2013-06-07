@@ -121,6 +121,11 @@ RTC::ReturnCode_t ActroidTest::onDeactivated(RTC::UniqueId ec_id)
 
 RTC::ReturnCode_t ActroidTest::onExecute(RTC::UniqueId ec_id)
 {
+	m_targetJoint.data.length(24);
+	for(int i = 0;i < 24;i++) {
+		m_targetJoint.data[i] = 0;
+	}
+	m_targetJointOut.write();
   return RTC::RTC_OK;
 }
 
